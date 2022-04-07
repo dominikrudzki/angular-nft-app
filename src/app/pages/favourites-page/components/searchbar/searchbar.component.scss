@@ -1,0 +1,16 @@
+.searchbar {
+	position: relative;
+
+	&__input {
+		display: block;
+		color: var(--font2);
+		width: 100%;
+		max-width: 40rem;
+		background-color: unset;
+		margin: clamp(.5rem, .5rem + 2vw, 3rem) auto;
+		border-radius: 1rem;
+		font-size: 1.2rem;
+		padding: .5em 1em;
+		border: .15em solid #4d4f56;
+	}
+}

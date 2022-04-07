@@ -8,7 +8,6 @@ const routes: Routes = [
 	},
 	{
 		path: 'favourites',
-		pathMatch: 'full',
 		loadChildren: () => import('./pages/favourites-page/favourites-page.module').then(m => m.FavouritesPageModule)
 	}
 ]

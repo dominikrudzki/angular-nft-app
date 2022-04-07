@@ -1,1 +1,6 @@
-<p>favourites-page works!</p>
+<div class="container">
+	<app-searchbar (searchbarEmitter)="filterValues($event)"></app-searchbar>
+	<div class="container__list">
+		<app-card *ngFor="let item of favNftData$ | async" [details]="{data:item, action: 'delete'}"></app-card>
+	</div>
+</div>

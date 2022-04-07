@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
+import { map, Observable } from "rxjs"
+import { Store } from "@ngrx/store"
 
 @Component({
-  selector: 'app-favourites-page',
-  templateUrl: './favourites-page.component.html',
-  styleUrls: ['./favourites-page.component.scss']
+	selector: 'app-favourites-page',
+	templateUrl: './favourites-page.component.html',
+	styleUrls: ['./favourites-page.component.scss']
 })
-export class FavouritesPageComponent implements OnInit {
+export class FavouritesPageComponent {
+	favNftData$: Observable<any> = this.store.select(({favourites}) => favourites)
 
-  constructor() { }
+	constructor(private store: Store<{ favourites: any }>) {
+	}
 
-  ngOnInit(): void {
-  }
+	filterValues(item: string) {
+		this.favNftData$ = this.store.select(({favourites}) => favourites).pipe(
+			map(res =>
+				res.filter((val: any) =>
+					val.name.toLowerCase().includes(item.toLowerCase())
+				)
+			)
+		)
+	}
 
 }

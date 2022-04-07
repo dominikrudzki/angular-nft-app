@@ -1,3 +1,5 @@
-<div>
-	<app-searchbar></app-searchbar>
+<div class="container">
+	<div class="container__list">
+		<app-card *ngFor="let item of nftData$ | async" [details]="{data: item, action: 'add'}"></app-card>
+	</div>
 </div>

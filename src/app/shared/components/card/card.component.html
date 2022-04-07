@@ -1,0 +1,27 @@
+<div class="card">
+
+	<div class="card__image">
+		<img
+			src="{{data.image_preview_url}}"
+			alt="{{data.name}}"
+			loading="lazy">
+		<button class="card__image--circle" (click)="handleClick()" [ngSwitch]="nftDetails.action">
+			<i class="fa-solid fa-star" *ngSwitchCase="'add'"></i>
+			<i class="fa-solid fa-xmark" *ngSwitchCase="'delete'"></i>
+		</button>
+	</div>
+
+	<div class="card__details">
+		<div class="card__title">{{data.name}}</div>
+		<div class="card__creator">
+			<img
+				src="{{data.creator.profile_img_url}}"
+				alt=""
+				class="card__creator--avatar">
+			<span class="card__creator--name">
+				{{data.creator.user?.username | UserExist}}
+			</span>
+		</div>
+	</div>
+
+</div>

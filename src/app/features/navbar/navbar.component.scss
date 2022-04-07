@@ -3,6 +3,8 @@
 	position: sticky;
 	background-color: #181d21;
 	padding: 0.7rem 0;
+	z-index: 10;
+	box-shadow: #64646F33 0 7px 29px 0;
 
 	&__logo {
 		justify-content: center;
@@ -27,6 +29,7 @@
 	&__item {
 		font-weight: 300;
 		border: 1px solid;
+		border-radius: .5em;
 
 		&:hover {
 			border-color: var(--accent);
